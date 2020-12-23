@@ -9,20 +9,19 @@ data = pd.read_csv('https://github.com/guga31bb/nflfastR-data/blob/master/data/'
                          
 data = data.loc[data.season_type=='REG']
 
-data = data.loc[(data.posteam=='PIT')]
+pit_data = data.loc[(data.posteam=='PIT')]
 
-data = data.loc[data.play_type.isin(['no_play','pass','run'])]
+pit_data = pit_data.loc[pit_data.play_type.isin(['no_play','pass','run'])]
 
-data = data.groupby('week', as_index=False)[['epa']].mean()
+pit_data = pit_data.groupby('week', as_index=False)[['epa']].mean()
 
 print(data)
 
 plt.figure(figsize=(10,10))
 
-plt.plot(data.week, data.epa, color='#FFB612', marker='.')
+plt.plot(pit_data.week, pit_data.epa, color='#FFB612', marker='.')
 
 plt.grid(zorder=0, alpha=0.4)
-
 plt.xlabel('Week')
 plt.ylabel('Offensive EPA per play')
 plt.title('Steelers\' Offensive EPA Timeline')

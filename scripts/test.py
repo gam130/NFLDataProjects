@@ -31,6 +31,6 @@ plt.title('Length and Number of Touchdown passes in the NFL by QB')
 
 plt.grid(zorder=0,alpha=0.4)
 
-plt.savefig('figures/avgAndNum.png', dpi=800)
+plt.savefig('scripts/figures/avgAndNum.png', dpi=800)
 
 

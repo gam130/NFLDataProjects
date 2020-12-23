@@ -19,7 +19,7 @@ print(data)
 
 plt.figure(figsize=(10,10))
 
-plt.plot(data.week, data.epa, color='blue', marker='o')
+plt.plot(data.week, data.epa, color='#FFB612', marker='.')
 
 plt.grid(zorder=0, alpha=0.4)
 
@@ -27,5 +27,7 @@ plt.xlabel('Week')
 plt.ylabel('Offensive EPA per play')
 plt.title('Steelers\' Offensive EPA Timeline')
 
-plt.savefig('figures/steelersEPA.png', dpi=800)
+plt.axhline(y=0,linestyle='--', color='grey')
+
+plt.savefig('scripts/figures/steelersEPA.png', dpi=800)
 

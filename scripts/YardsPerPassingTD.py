@@ -26,4 +26,4 @@ plt.title('Distribution of how long passes were in 2019')
 plt.xticks(np.arange(-10, 100, step=10))
 plt.legend()
 
-plt.savefig('figures/ydsTDdist.png', dpi=400)
+plt.savefig('scripts/figures/ydsTDdist.png', dpi=400)

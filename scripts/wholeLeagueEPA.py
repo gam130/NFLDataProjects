@@ -11,6 +11,7 @@ data = data.loc[data.season_type=='REG']
 
 teamAbbreviations = pd.read_csv('https://gist.githubusercontent.com/cnizzardini/13d0a072adb35a0d5817/raw/dbda01dcd8c86101e68cbc9fbe05e0aa6ca0305b/nfl_teams.csv')
 teamAbbreviations = teamAbbreviations.Abbreviation
+teamAbbreviations[28] = 'LA'
 
 COLORS = {'ARI':'#97233F','ATL':'#A71930','BAL':'#241773','BUF':'#00338D','CAR':'#0085CA','CHI':'#00143F',
           'CIN':'#FB4F14','CLE':'#FB4F14','DAL':'#B0B7BC','DEN':'#002244','DET':'#046EB4','GB':'#24423C',
@@ -20,6 +21,7 @@ COLORS = {'ARI':'#97233F','ATL':'#A71930','BAL':'#241773','BUF':'#00338D','CAR':
           'TEN':'#4095D1','WAS':'#FFC20F'}
 
 for i in range(0, len(teamAbbreviations)):
+    
     team_data = data.loc[(data.posteam==teamAbbreviations[i])]
     team_data = team_data.loc[team_data.play_type.isin(['no_play','pass','run'])]
     team_data = team_data.groupby('week', as_index=False)[['epa']].mean()

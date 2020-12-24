@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 
 YEAR = 2020
 
@@ -30,6 +31,8 @@ for i in range(0, len(teamAbbreviations)):
 
     plt.plot(team_data.week, team_data.epa, color=COLORS[teamAbbreviations[i]], marker='.', label=teamAbbreviations[i])
 
+    plt.yticks(np.arange(-0.8, 0.8, step=0.2))
+
     plt.grid(zorder=0, alpha=0.4)
     plt.xlabel('Week')
     plt.ylabel('Offensive EPA per play')
@@ -38,4 +41,4 @@ for i in range(0, len(teamAbbreviations)):
     plt.axhline(y=0,linestyle='--', color='grey')
     plt.legend()
 
-    plt.savefig('scripts/figures/wholeLeagueEPA/' + teamAbbreviations[i] + 'EPA.png', dpi=400)
+    plt.savefig('scripts/figures/wholeLeagueEPA/' + teamAbbreviations[i] + 'EPA.png', dpi=800)

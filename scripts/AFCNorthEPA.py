@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 
 YEAR = 2020
 
@@ -36,6 +37,8 @@ plt.grid(zorder=0, alpha=0.4)
 plt.xlabel('Week')
 plt.ylabel('Offensive EPA per play')
 plt.title('AFC North Offensive EPA By Week')
+
+plt.yticks(np.arange(-0.8, 0.8, step=0.2))
 
 plt.axhline(y=0,linestyle='--', color='grey')
 plt.legend()
